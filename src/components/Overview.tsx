@@ -64,8 +64,8 @@ export function Overview() {
   return (
     <div className="space-y-6 animate-in fade-in duration-500">
       <div>
-        <h2 className="text-2xl font-bold tracking-tight text-[#141414]">Resumen ejecutivo</h2>
-        <p className="text-sm text-gray-500 mt-1">Indicadores de scoring, cartera y canales (datos demo).</p>
+        <h2 className="text-xl font-bold tracking-tight text-[#141414] sm:text-2xl">Resumen ejecutivo</h2>
+        <p className="mt-1 text-sm text-gray-500">Indicadores de scoring, cartera y canales (datos demo).</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -140,9 +140,10 @@ export function Overview() {
             Millones USD en los últimos 30 días y variación vs periodo anterior
           </CardDescription>
         </CardHeader>
-        <CardContent className="h-[280px]">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={channelVolume} layout="vertical" margin={{ left: 4, right: 48 }}>
+        <CardContent className="min-h-[220px] h-[240px] sm:h-[280px]">
+          <div className="h-full w-full min-w-0 overflow-x-auto">
+          <ResponsiveContainer width="100%" height="100%" minHeight={220}>
+            <BarChart data={channelVolume} layout="vertical" margin={{ left: 4, right: 36, top: 4, bottom: 4 }}>
               <defs>
                 <linearGradient id="chanBar" x1="0" y1="0" x2="1" y2="0">
                   <stop offset="0%" stopColor="#FF007F" />
@@ -151,7 +152,7 @@ export function Overview() {
               </defs>
               <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#eee" />
               <XAxis type="number" tick={{ fontSize: 12 }} tickFormatter={(v) => `$${v}M`} domain={[0, 'dataMax + 0.8']} />
-              <YAxis type="category" dataKey="canal" width={148} tick={{ fontSize: 12 }} />
+              <YAxis type="category" dataKey="canal" width={118} tick={{ fontSize: 11 }} />
               <Tooltip
                 cursor={{ fill: 'rgba(139, 92, 246, 0.06)' }}
                 contentStyle={{ borderRadius: 8, border: 'none', background: '#141414', color: '#fff' }}
@@ -170,17 +171,18 @@ export function Overview() {
               </Bar>
             </BarChart>
           </ResponsiveContainer>
+          </div>
         </CardContent>
       </Card>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         <Card className="lg:col-span-2 border-[#E4E3E0]/10 bg-white/50 backdrop-blur-sm">
           <CardHeader>
             <CardTitle className="text-lg font-semibold">Tendencia de Scoring</CardTitle>
             <CardDescription>Evolución del score promedio en los últimos 6 meses</CardDescription>
           </CardHeader>
-          <CardContent className="h-[300px]">
-            <ResponsiveContainer width="100%" height="100%">
+          <CardContent className="min-h-[220px] h-[240px] sm:h-[280px] md:h-[300px]">
+            <ResponsiveContainer width="100%" height="100%" minHeight={220}>
               <BarChart data={trendData}>
                 <defs>
                   <linearGradient id="credixBarGrad" x1="0" y1="0" x2="0" y2="1">
@@ -206,8 +208,8 @@ export function Overview() {
             <CardTitle className="text-lg font-semibold">Distribución por Nivel</CardTitle>
             <CardDescription>Segmentación de cartera actual</CardDescription>
           </CardHeader>
-          <CardContent className="h-[300px] flex flex-col items-center justify-center">
-            <ResponsiveContainer width="100%" height="100%">
+          <CardContent className="flex min-h-[220px] h-[240px] flex-col items-center justify-center sm:h-[280px] md:h-[300px]">
+            <ResponsiveContainer width="100%" height="100%" minHeight={200}>
               <PieChart>
                 <Pie
                   data={data}
@@ -238,7 +240,7 @@ export function Overview() {
       </div>
 
       <Card className="border-[#E4E3E0]/10 bg-white/50 backdrop-blur-sm">
-        <CardHeader className="flex flex-row items-center justify-between">
+        <CardHeader className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <CardTitle className="text-lg font-semibold">Procesamientos Recientes</CardTitle>
             <CardDescription>Últimos clientes evaluados por el pipeline</CardDescription>
@@ -248,7 +250,7 @@ export function Overview() {
             Filtrar
           </button>
         </CardHeader>
-        <CardContent>
+        <CardContent className="overflow-x-auto -mx-1 px-1">
           <Table>
             <TableHeader>
               <TableRow className="hover:bg-transparent border-b border-[#eee]">
@@ -296,22 +298,22 @@ export function Overview() {
 function StatCard({ title, value, trend, trendUp, icon: Icon }: any) {
   return (
     <Card className="border-[#E4E3E0]/10 bg-white shadow-sm overflow-hidden group">
-      <CardContent className="p-6">
-        <div className="flex items-center justify-between mb-4">
-          <div className="p-2 bg-violet-50/80 rounded-lg group-hover:bg-fuchsia-50 transition-colors">
-            <Icon className="w-5 h-5 text-violet-400 group-hover:text-[#c026d3] transition-colors" />
+      <CardContent className="p-4 sm:p-6">
+        <div className="mb-3 flex items-center justify-between sm:mb-4">
+          <div className="rounded-lg bg-violet-50/80 p-2 transition-colors group-hover:bg-fuchsia-50">
+            <Icon className="h-5 w-5 text-violet-400 transition-colors group-hover:text-[#c026d3]" />
           </div>
           <div className={cn(
-            "flex items-center gap-1 text-xs font-bold px-2 py-1 rounded-full",
+            "flex items-center gap-1 rounded-full px-2 py-1 text-[10px] font-bold sm:text-xs",
             trendUp ? "text-emerald-600 bg-emerald-50" : "text-red-600 bg-red-50"
           )}>
-            {trendUp ? <ArrowUpRight className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}
+            {trendUp ? <ArrowUpRight className="h-3 w-3" /> : <ArrowDownRight className="h-3 w-3" />}
             {trend}
           </div>
         </div>
         <div>
-          <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">{title}</p>
-          <h3 className="text-2xl font-bold tracking-tight text-[#141414]">{value}</h3>
+          <p className="mb-1 text-[10px] font-bold uppercase tracking-wider text-gray-400 sm:text-xs">{title}</p>
+          <h3 className="text-xl font-bold tracking-tight text-[#141414] sm:text-2xl">{value}</h3>
         </div>
       </CardContent>
     </Card>

@@ -86,13 +86,13 @@ export function MoraAnalysis() {
   return (
     <div className="space-y-6 animate-in fade-in duration-500">
       <div>
-        <h2 className="text-2xl font-bold tracking-tight text-[#141414]">Análisis de mora</h2>
-        <p className="text-gray-500 mt-1 max-w-3xl">
+        <h2 className="text-xl font-bold tracking-tight text-[#141414] sm:text-2xl">Análisis de mora</h2>
+        <p className="mt-1 max-w-3xl text-sm text-gray-500 sm:text-base">
           Seguimiento de cartera vencida, antigüedad de obligaciones y principales exposiciones. Datos ilustrativos para el demo Credix BI.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-4">
         <KpiMora
           title="Saldo en mora"
           value="$742K"
@@ -129,8 +129,8 @@ export function MoraAnalysis() {
             <CardTitle className="text-lg font-semibold">Evolución de la mora</CardTitle>
             <CardDescription>Tasa de mora sobre cartera (%) y saldo vencido (millones USD)</CardDescription>
           </CardHeader>
-          <CardContent className="h-[300px]">
-            <ResponsiveContainer width="100%" height="100%">
+          <CardContent className="min-h-[220px] h-[240px] sm:h-[280px] md:h-[300px]">
+            <ResponsiveContainer width="100%" height="100%" minHeight={200}>
               <LineChart data={moraEvolution}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#eee" />
                 <XAxis dataKey="mes" tick={{ fontSize: 12 }} axisLine={false} tickLine={false} />
@@ -154,9 +154,9 @@ export function MoraAnalysis() {
             <CardTitle className="text-lg font-semibold">Composición por antigüedad</CardTitle>
             <CardDescription>Saldo vencido agrupado por días de mora (DPD)</CardDescription>
           </CardHeader>
-          <CardContent className="h-[300px]">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={bucketComposition} layout="vertical" margin={{ left: 8, right: 16 }}>
+          <CardContent className="min-h-[220px] h-[240px] sm:h-[280px] md:h-[300px]">
+            <ResponsiveContainer width="100%" height="100%" minHeight={200}>
+              <BarChart data={bucketComposition} layout="vertical" margin={{ left: 4, right: 12 }}>
                 <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#eee" />
                 <XAxis type="number" tick={{ fontSize: 12 }} tickFormatter={(v) => `$${v}M`} />
                 <YAxis type="category" dataKey="rango" width={88} tick={{ fontSize: 11 }} />

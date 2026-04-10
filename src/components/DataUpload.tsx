@@ -65,15 +65,15 @@ export function DataUpload() {
 
   return (
     <div className="space-y-6 animate-in fade-in duration-500">
-      <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight">Carga de Fuentes de Datos</h2>
-          <p className="text-gray-500">Sube los archivos de Ubii y Fibex para iniciar el proceso de scoring.</p>
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        <div className="min-w-0">
+          <h2 className="text-xl font-bold tracking-tight sm:text-2xl">Carga de Fuentes de Datos</h2>
+          <p className="text-sm text-gray-500">Sube los archivos de Ubii y Fibex para iniciar el proceso de scoring.</p>
         </div>
         <Button 
           onClick={handleProcess} 
           disabled={isProcessing}
-          className="bg-gradient-to-r from-[#FF007F] to-[#a855f7] hover:from-[#e11d8c] hover:to-[#9333ea] text-white font-bold px-8 shadow-md shadow-fuchsia-900/15"
+          className="w-full shrink-0 bg-gradient-to-r from-[#FF007F] to-[#a855f7] px-6 font-bold text-white shadow-md shadow-fuchsia-900/15 hover:from-[#e11d8c] hover:to-[#9333ea] sm:w-auto sm:px-8"
         >
           {isProcessing ? (
             <>
@@ -112,7 +112,7 @@ export function DataUpload() {
         </Card>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
         <SourceCard 
           title="Ubii - Carteras" 
           description="Líneas activas, mora y cuotas históricas"

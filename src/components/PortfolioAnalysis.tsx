@@ -64,13 +64,13 @@ export function PortfolioAnalysis() {
   return (
     <div className="space-y-6 animate-in fade-in duration-500">
       <div>
-        <h2 className="text-2xl font-bold tracking-tight text-[#141414]">Análisis de cartera</h2>
-        <p className="text-gray-500 mt-1 max-w-3xl">
+        <h2 className="text-xl font-bold tracking-tight text-[#141414] sm:text-2xl">Análisis de cartera</h2>
+        <p className="mt-1 max-w-3xl text-sm text-gray-500 sm:text-base">
           Vista detallada de composición, concentración y evolución del saldo activo. Datos de demostración — conectar a fuentes Ubii / Fibex en producción.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-4">
         <Kpi
           title="Saldo cartera activa"
           value="$14.8M"
@@ -107,7 +107,7 @@ export function PortfolioAnalysis() {
             <CardTitle className="text-lg font-semibold">Crecimiento de cartera</CardTitle>
             <CardDescription>Saldo total (millones USD) y altas netas mensuales (unidades)</CardDescription>
           </CardHeader>
-          <CardContent className="h-[320px]">
+          <CardContent className="min-h-[220px] h-[260px] sm:h-[300px] md:h-[320px]">
             <ResponsiveContainer width="100%" height="100%">
               <ComposedChart data={growthSeries}>
                 <defs>
@@ -138,7 +138,7 @@ export function PortfolioAnalysis() {
             <CardTitle className="text-lg font-semibold">Composición</CardTitle>
             <CardDescription>Por tipo de producto (demostración)</CardDescription>
           </CardHeader>
-          <CardContent className="h-[280px] flex flex-col">
+          <CardContent className="flex min-h-[220px] h-[240px] flex-col sm:h-[280px]">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
@@ -167,7 +167,7 @@ export function PortfolioAnalysis() {
           <CardTitle className="text-lg font-semibold">Segmentación de cartera</CardTitle>
           <CardDescription>Distribución por nivel de riesgo / segmento operativo</CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="overflow-x-auto">
           <Table>
             <TableHeader>
               <TableRow className="hover:bg-transparent border-b">

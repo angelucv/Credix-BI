@@ -16,12 +16,12 @@ import { cn } from '@/lib/utils';
 export function ScoringRules() {
   return (
     <div className="space-y-6 animate-in fade-in duration-500">
-      <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight">Reglas de Negocio</h2>
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        <div className="min-w-0">
+          <h2 className="text-xl font-bold tracking-tight sm:text-2xl">Reglas de Negocio</h2>
           <p className="text-gray-500">Configura los parámetros y pesos del motor de scoring Credix BI.</p>
         </div>
-        <Button className="bg-[#141414] text-white font-bold">Guardar Cambios</Button>
+        <Button className="w-full bg-[#141414] font-bold text-white sm:w-auto">Guardar Cambios</Button>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
