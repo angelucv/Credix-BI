@@ -19,7 +19,7 @@ export function ScoringRules() {
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-2xl font-bold tracking-tight">Reglas de Negocio</h2>
-          <p className="text-gray-500">Configura los parámetros y pesos del motor de scoring BETINA.</p>
+          <p className="text-gray-500">Configura los parámetros y pesos del motor de scoring Credix BI.</p>
         </div>
         <Button className="bg-[#141414] text-white font-bold">Guardar Cambios</Button>
       </div>
@@ -69,25 +69,25 @@ export function ScoringRules() {
         </div>
 
         <div className="space-y-6">
-          <Card className="border-[#E4E3E0]/10 bg-orange-50 border-orange-100">
+          <Card className="border-fuchsia-100 bg-gradient-to-br from-fuchsia-50/90 to-violet-50/50 border-violet-100">
             <CardHeader>
-              <CardTitle className="text-sm font-bold flex items-center gap-2 text-orange-800">
+              <CardTitle className="text-sm font-bold flex items-center gap-2 text-[#9d174d]">
                 <AlertTriangle className="w-4 h-4" />
                 Reglas de Exclusión
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-start gap-3">
-                <div className="mt-1 w-1.5 h-1.5 rounded-full bg-orange-600 shrink-0" />
-                <p className="text-xs text-orange-900 font-medium">Mora mayor a 90 días: Rechazo Automático (D)</p>
+                <div className="mt-1 w-1.5 h-1.5 rounded-full bg-[#FF007F] shrink-0" />
+                <p className="text-xs text-[#5b1a3a] font-medium">Mora mayor a 90 días: Rechazo Automático (D)</p>
               </div>
               <div className="flex items-start gap-3">
-                <div className="mt-1 w-1.5 h-1.5 rounded-full bg-orange-600 shrink-0" />
-                <p className="text-xs text-orange-900 font-medium">Menores de 18 años: Rechazo Automático</p>
+                <div className="mt-1 w-1.5 h-1.5 rounded-full bg-[#FF007F] shrink-0" />
+                <p className="text-xs text-[#5b1a3a] font-medium">Menores de 18 años: Rechazo Automático</p>
               </div>
               <div className="flex items-start gap-3">
-                <div className="mt-1 w-1.5 h-1.5 rounded-full bg-orange-600 shrink-0" />
-                <p className="text-xs text-orange-900 font-medium">Cédula en Lista Negra: Bloqueo Permanente</p>
+                <div className="mt-1 w-1.5 h-1.5 rounded-full bg-[#FF007F] shrink-0" />
+                <p className="text-xs text-[#5b1a3a] font-medium">Cédula en Lista Negra: Bloqueo Permanente</p>
               </div>
             </CardContent>
           </Card>
@@ -124,7 +124,7 @@ function RuleInput({ label, value, suffix, readOnly }: any) {
           defaultValue={value} 
           readOnly={readOnly}
           className={cn(
-            "font-mono font-bold text-lg border-gray-200 focus:ring-orange-500",
+            "font-mono font-bold text-lg border-gray-200 focus:ring-[#e91e8c]/50",
             readOnly && "bg-gray-50 text-gray-400"
           )} 
         />
@@ -142,7 +142,7 @@ function WeightSlider({ label, value }: any) {
         <span className="text-sm font-bold font-mono">{value}%</span>
       </div>
       <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
-        <div className="h-full bg-orange-600 rounded-full" style={{ width: `${value}%` }} />
+        <div className="h-full rounded-full bg-gradient-to-r from-[#FF007F] to-[#7c3aed]" style={{ width: `${value}%` }} />
       </div>
     </div>
   );

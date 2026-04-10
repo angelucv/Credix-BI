@@ -1,5 +1,5 @@
 {
-  "name": "BETINA - Credix Scoring Pipeline",
+  "name": "Credix BI - Scoring Pipeline",
   "description": "Automatización del pipeline de scoring crediticio para Credix. Procesa datos de múltiples fuentes para generar niveles de riesgo y montos aprobados en tiempo real.",
   "requestFramePermissions": []
 }

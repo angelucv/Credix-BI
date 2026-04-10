@@ -73,7 +73,7 @@ export function DataUpload() {
         <Button 
           onClick={handleProcess} 
           disabled={isProcessing}
-          className="bg-orange-600 hover:bg-orange-700 text-white font-bold px-8"
+          className="bg-gradient-to-r from-[#FF007F] to-[#a855f7] hover:from-[#e11d8c] hover:to-[#9333ea] text-white font-bold px-8 shadow-md shadow-fuchsia-900/15"
         >
           {isProcessing ? (
             <>
@@ -87,14 +87,14 @@ export function DataUpload() {
       </div>
 
       {isProcessing && (
-        <Card className="border-orange-200 bg-orange-50/50">
+        <Card className="border-fuchsia-200/80 bg-gradient-to-br from-fuchsia-50/90 to-violet-50/70">
           <CardContent className="pt-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-bold text-orange-700 uppercase tracking-wider">Progreso del Pipeline</span>
-              <span className="text-sm font-bold text-orange-700">{progress}%</span>
+              <span className="text-sm font-bold text-[#9d174d] uppercase tracking-wider">Progreso del Pipeline</span>
+              <span className="text-sm font-bold text-[#7c3aed]">{progress}%</span>
             </div>
-            <Progress value={progress} className="h-2 bg-orange-200" />
-            <div className="mt-4 grid grid-cols-4 gap-4 text-[10px] font-bold uppercase tracking-widest text-orange-600">
+            <Progress value={progress} className="h-2 bg-fuchsia-100" />
+            <div className="mt-4 grid grid-cols-4 gap-4 text-[10px] font-bold uppercase tracking-widest text-[#c026d3]">
               <div className={cn("flex items-center gap-2", progress > 25 ? "opacity-100" : "opacity-30")}>
                 <CheckCircle2 className="w-3 h-3" /> Limpieza
               </div>

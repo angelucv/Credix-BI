@@ -6,6 +6,8 @@
 import React, { useState } from 'react';
 import { Sidebar } from './components/layout/Sidebar';
 import { Overview } from './components/Overview';
+import { PortfolioAnalysis } from './components/PortfolioAnalysis';
+import { MoraAnalysis } from './components/MoraAnalysis';
 import { DataUpload } from './components/DataUpload';
 import { ScoringRules } from './components/ScoringRules';
 import { Badge } from '@/components/ui/badge';
@@ -15,7 +17,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState('overview');
 
   return (
-    <div className="flex h-screen bg-[#F8F9FA] text-[#141414] font-sans">
+    <div className="flex h-screen bg-[#f4f2f8] text-[#141414] font-sans">
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
       
       <main className="flex-1 flex flex-col overflow-hidden">
@@ -27,7 +29,7 @@ export default function App() {
               <input 
                 type="text" 
                 placeholder="Buscar cliente, cédula o score..." 
-                className="w-full pl-10 pr-4 py-2 bg-gray-50 border-none rounded-full text-sm focus:ring-2 focus:ring-orange-500 transition-all"
+                className="w-full pl-10 pr-4 py-2 bg-white border border-violet-100/80 rounded-full text-sm focus:ring-2 focus:ring-[#e91e8c]/40 focus:border-fuchsia-200 transition-all shadow-sm"
               />
             </div>
           </div>
@@ -40,10 +42,10 @@ export default function App() {
               </Badge>
             </div>
             <div className="flex items-center gap-4 text-gray-400">
-              <button className="hover:text-orange-600 transition-colors">
+              <button type="button" className="hover:text-[#c026d3] transition-colors">
                 <Bell className="w-5 h-5" />
               </button>
-              <button className="hover:text-orange-600 transition-colors">
+              <button type="button" className="hover:text-[#c026d3] transition-colors">
                 <HelpCircle className="w-5 h-5" />
               </button>
             </div>
@@ -54,6 +56,8 @@ export default function App() {
         <div className="flex-1 overflow-y-auto p-8">
           <div className="max-w-7xl mx-auto">
             {activeTab === 'overview' && <Overview />}
+            {activeTab === 'portfolio' && <PortfolioAnalysis />}
+            {activeTab === 'mora' && <MoraAnalysis />}
             {activeTab === 'upload' && <DataUpload />}
             {activeTab === 'rules' && <ScoringRules />}
             

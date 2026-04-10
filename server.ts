@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = Number(process.env.PORT) || 3000;
 
   app.use(express.json());
 
@@ -52,7 +52,7 @@ async function startServer() {
     setTimeout(() => {
       res.json({
         status: "success",
-        message: "Datos procesados con lógica de scoring BETINA v1.0",
+        message: "Datos procesados con lógica de scoring Credix BI v1.0",
         results
       });
     }, 1500);
