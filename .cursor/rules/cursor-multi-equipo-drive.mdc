@@ -1,0 +1,12 @@
+---
+description: Varios equipos locales, Google Drive y Git (todos los workspaces bajo Projects)
+alwaysApply: true
+---
+
+# Multi-equipo y Drive
+
+- Asumir trabajo en **mas de un equipo** (PC, laptop, USB). No dar por hechos archivos solo mencionados en otro contexto.
+- **Git** = codigo y docs versionados; **Drive** = Excel, exports, CSV masivos, minutas fuera de Git cuando el flujo del programa lo indique.
+- Tras cambiar de maquina: `git pull` antes de editar; al cerrar: `git push` en cada repo tocado.
+- Si el usuario habla de **Drive**, verificar rutas en `INDICE-PROYECTOS.md`, maestro del cliente y `CURSOR-INSTRUCCIONES-MULTI-EQUIPO-Y-DRIVE.md` en la raiz de `Projects`.
+- Configs de herramientas (p. ej. Streamlit `config.toml`) en **UTF-8** plano.
