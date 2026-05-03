@@ -20,6 +20,6 @@
 
 Si el alcance cruza programas: **`C:\Users\Angel\Projects\INDICE-PROYECTOS.md`**.
 
-## Cursor: varios equipos y Google Drive
+## Estado otra máquina (2026-05-03)
 
-Instrucciones **globales** (PC, laptop, Drive vs Git): `C:\Users\Angel\Projects\CURSOR-INSTRUCCIONES-MULTI-EQUIPO-Y-DRIVE.md`. Regla: `.cursor/rules/cursor-multi-equipo-drive.mdc`.
+Cambios de producto no están en Credix; el **padre** La Internacional cerró sesión en PC con **BI Interno / Siniestralidad** (ver `clients/la-internacional/ESTADO-ULTIMA-ACTIVIDAD-PC.md` y su `AGENTS.md`).
